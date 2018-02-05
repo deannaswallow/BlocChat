@@ -22,7 +22,13 @@ class MessageList extends Component {
 
   render() {
     return(
-      <div>Message List Goes Here</div>
+      <div className="message-list">
+        <ul>
+          {this.state.messages.map( (message, index) =>
+            <li key={index}>{message.content}</li>
+          )}
+        </ul>
+      </div>
     );
   }
 }
