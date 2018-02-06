@@ -25,7 +25,9 @@ class App extends Component {
   }
 
   setActiveRoom(room) {
-    this.setState({ activeRoom: room });
+    console.log(this.state);
+    console.log(room.key);
+    //this.setState({ activeRoom: room.key });
   }
 
   render() {
@@ -37,7 +39,7 @@ class App extends Component {
           <RoomList
             firebase={firebase}
             activeRoom={this.state.activeRoom}
-            setActiveRoom={this.setActiveRoom}
+            setActiveRoom={() => this.setActiveRoom()}
             />
           <MessageList
             firebase={firebase}
